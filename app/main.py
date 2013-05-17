@@ -30,10 +30,10 @@ class Main():
         def index():
 			return "Hello INDEX!"
 			
-        @self.app.route('/assets/<filename:re:.+>', name='assets')
+        @self.app.route('/static/<filename:re:.+>', name='static')
         def static(filename):
             gc.collect()
-            return static_file(filename, root='assets')
+            return static_file(filename, root='static')
         
     def dev_run(self):
         self.session_opts = {
